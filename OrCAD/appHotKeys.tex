@@ -1,0 +1,66 @@
+\begin{tabularx}{\linewidth}{|X|m{6cm}|}	
+%	\caption{} \label{} \\
+	
+	\hline
+    \calign{Команда}	& \calign{Описание}	\\ \hline
+    \endfirsthead
+    
+    \multicolumn{2}{r}{продолжение следует\ldots} \\
+    \endfoot
+	\endlastfoot
+	
+	\multicolumn{2}{l}{Продолжение таблицы} \\ \hline 	
+	\calign{Команда}	& \calign{Описание}	\\ \hline
+	\endhead
+	
+	
+	\textit{funckey Esc cancel}		& Отмена действия по нажатию \textbf{<<Esc>>}.	\\ \hline
+	\textit{funckey r iangle 90} 	& Поворот на 90 градусов по нажатию \textbf{<<r>>}.	\\ \hline
+    \textit{funckey " " "pop bbdrill -cursor"} 	& Поставить переходное отверстие по нажатию \textbf{<<пробел>>}.	\\ \hline    
+    \textit{funckey x "pick\_to\_grid -cursor"}	& Добавить точку излома по нажатию \textbf{<<x>>}.	\\ \hline
+    \textit{funckey Del "prepopup; pop dyn\_option\_select @:@Delete"}	& Удаление элемента по нажатию \textbf{<<Del>>}.	\\ \hline
+    \textit{funckey m "pop mirror"}	& перенос элемента на другой слой по нажатию \textbf{<<m>>}.	\\ \hline
+    
+    \multicolumn{2}{|c|}{Смена шага сетки}	\\ \hline
+    \textit{alias CF1 "define grid; FORM grid non\_etch non\_etch\_x\_grids 1.0; FORM grid non\_etch non\_etch\_y\_grids 1.0; FORM grid all\_etch all\_etch\_x\_grids 1.0; FORM grid all\_etch all\_etch\_y\_grids 1.0; FORM grid done"}	& Выбор шага сетки 1мм по нажатию \textbf{<<Ctrl+F2>>}.	\\ \hline
+    \textit{alias CF2 "define grid; FORM grid non\_etch non\_etch\_x\_grids 0.5; FORM grid non\_etch non\_etch\_y\_grids 0.5; FORM grid all\_etch all\_etch\_x\_grids 0.5; FORM grid all\_etch all\_etch\_y\_grids 0.5; FORM grid done"}	& Выбор шага сетки 0.5мм по нажатию \textbf{<<Ctrl+F1>>}.	\\ \hline
+    \textit{alias CF5 "define grid; FORM grid non\_etch non\_etch\_x\_grids 2.54; FORM grid non\_etch no\_etch\_y\_grids 2.54; FORM grid all\_etch all\_etch\_x\_grids 2.54; FORM grid all\_etch all\_etch\_y\_grids 2.54; FORM grid done"}	& Выбор шага сетки 2.54 мм по нажатию \textbf{<<Ctrl+F5>>}.	\\ \hline
+    \textit{alias CF6 "define grid; FORM grid non\_etch non\_etch\_x\_grids 1.27; FORM grid non\_etch non\_etch\_y\_grids 1.27; FORM grid all\_etch all\_etch\_x\_grids 1.27; FORM grid all\_etch all\_etch\_y\_grids 1.27; FORM grid done"}	& Выбор шага сетки 1.27 мм по нажатию \textbf{<<Ctrl+F6>>}.	\\ \hline
+    
+    \multicolumn{2}{|c|}{Смена толщины линии}																		\\ \hline
+    \textit{funckey \textasciitilde1 'FORM mini acon\_line\_width Constrain' }	& Толщина линии согласно установленным ограничениям по нажатию \textbf{<<Ctrl+1>>}. . \\ \hline
+    \textit{funckey \textasciitilde2 'FORM mini acon\_line\_width 0.2'} & Толщина линии 0.2мм по нажатию \textbf{<<Ctrl+2>>}.	\\ \hline
+    \textit{funckey \textasciitilde7 'FORM mini acon\_line\_width 2.0'} & Толщина линии 2.0мм по нажатию \textbf{<<Ctrl+7>>}.	\\ \hline
+    \textit{funckey w 'settoggle CMD \textasciitilde1 \textasciitilde2 \textasciitilde3 \textasciitilde4 \textasciitilde5 \textasciitilde6 \textasciitilde7;\textdollar CMD'} & Перебор заданных толщин линий по нажатию \textbf{<<w>>}	\\ \hline
+    \multicolumn{2}{|c|}{Управление полигонами}	\\	
+    \multicolumn{2}{|c|}{В \hyperlink{ssec:user_preferences}{my\_favorites} должен присутсвовать \textit{no\_shape\_fill}}	\\ \hline
+    \textit{alias \textasciitilde k "enved; etchedit; setwindow form.prfedit; FORM prfedit next\_prfs; FORM prfedit no\_shape\_fill NO; FORM prfedit apply; FORM prfedit done; setwindow pcb"}	& Включение заливики полигонов по нажатию \textbf{<<Ctrl+"+"{} на~дополнительной клавиатуре>>}. \\ \hline
+    \textit{alias \textasciitilde m "enved; etchedit; setwindow form.prfedit; FORM prfedit next\_prfs; FORM prfedit no\_shape\_fill YES; FORM prfedit apply; FORM prfedit done; setwindow pcb"}	& Отключение заливики полигонов по нажатию \textbf{<<Ctrl+"$-$"{} на~дополнительной клавиатуре>>}. \\ \hline
+    
+    \multicolumn{2}{|c|}{Смена подкласса}	\\ \hline
+    funckey + subclass -+	& Смена текущего подкласса на стоящий ниже по списку по нажатию \textbf{<<+>>}. \\ \hline
+    funckey - subclass --	& Смена текущего подкласса на стоящий выше по списку по нажатию \textbf{<<-->>}. \\ \hline
+    funckey a altsubclass -+	& Смена подкласса перехода при постановке переходного отверстия по нажатию \textbf{<<a>>}.	\\ \hline
+    funckey 1 options subclass TOP	& Выбор подкласса \textit{Top} по нажатию \textbf{<<1>>}.	\\ \hline
+    funckey 4 options subclass BOTTOM	& Выбор подкласса \textit{Bottom} по нажатию \textbf{<<4>>}.	\\ \hline
+    \multicolumn{2}{|c|}{Привязка}	\\ \hline
+    \textit{funckey f "prepopup;pop dyn\_option\_select 'Snap pick to@:@Figure'"}	& Привязка к фигуре по нажатию \textbf{<<f>>}.	\\ \hline
+    \textit{funckey i "prepopup;pop dyn\_option\_select 'Snap pick to@:@Intersection'"}	& Привязка к точке пересечения по нажатию \textbf{<<i>>}.	\\ \hline
+    \textit{funckey c "prepopup;pop dyn\_option\_select 'Snap pick to@:@Arc/Circle Center'"}	& Привязка к центру дуги или круга по нажатию \textbf{<<c>>}.	\\ \hline
+    \textit{funckey v "prepopup;pop dyn\_option\_select 'Snap pick to@:@Via'"}	& Привязка к переходному отверстию по нажатию \textbf{<<v>>}. \\ \hline
+    
+    \multicolumn{2}{|c|}{Настройки для колесика мышки}	\\ \hline
+    button wheel\_up "roam y -\textdollar roamInc"	& Перемещение экрана вверх при вращении колесика \textbf{<<вверх>>}.	\\ \hline
+    button wheel\_down "roam y \textdollar roamInc"	& Перемещение экрана вниз при вращении колесика \textbf{<<вниз>>}.	\\ \hline
+    button SCwheel\_up "roam x \textdollar roamInc"	& Перемещение экрана вправо при вращении колесика \textbf{<<Shift+Ctrl+вверх>>}.	\\ \hline
+    button SCwheel\_down "roam x -\textdollar roamInc"	& Перемещение экрана влево при вращении колесика \textbf{<<Shift+Ctrl+вниз>>}.	\\ \hline
+    button Swheel\_up subclass -+	& Смена подкласса при вращении колесика \textbf{<<Shift+вверх>>}.	\\ \hline
+    button Swheel\_down altsubclass -+	& Смена подкласса перехода при постановке переходного отверстия при вращении колесика \textbf{<<Shift+вниз>>}.	\\ \hline
+    button Cwheel\_up zoom in	& Увеличение масштаба при вращении колесика \textbf{<<Ctrl+вверх>>}.	\\ \hline
+    button Cwheel\_down zoom out	& Уменьшение масштаба при вращении колесике \textbf{<<Ctrl+вниз>>}.	\\ \hline
+    
+    
+    
+    
+    	
+\end{tabularx}

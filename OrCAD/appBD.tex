@@ -1,0 +1,45 @@
+\begin{tabularx}{\linewidth}{|M{1.2cm}|X|M{1.7cm}|M{1.7cm}|M{1.7cm}|M{1.7cm}|}	
+	\caption{Рекомендуемые значения поля \textit{Part Type} для \textbf{БД}} \label{tab:app_bd_part_type} \\
+	
+	\hline
+    Адрес	& \calign{Название и~описание параметра}	& Масш.	& Мин.	& Макс.	& Доступ	\\ \hline
+    \endfirsthead
+    
+    \multicolumn{6}{r}{продолжение следует\ldots} \\
+    \endfoot
+	\endlastfoot
+	
+	\multicolumn{6}{l}{Продолжение таблицы \ref{tab:app_bd_part_type}} \\ \hline 	
+	Адрес	&  \calign{Название и~описание параметра} 	& Масш.		& Мин.		& Макс.		& Доступ	\\ \hline
+	\endhead
+	
+	\multicolumn{6}{|c|}{Дата и~время} 																	\\ \hline
+	1 		& Год 										& 1~год 	& 0 		& 99 		& чт./зап.	\\ \hline
+	2 		& Месяц 									& 1~мес 	& 1 		& 12 		& чт./зап.	\\ \hline
+    3 		& День 										& 1~день	& 1 		& 31 		& чт./зап.	\\ \hline
+    4 		& Часы 										& 1~час 	& 0 		& 23 		& чт./зап.	\\ \hline
+    5 		& Минуты 									& 1~мин 	& 0 		& 59 		& чт./зап.	\\ \hline
+    6 		& Секунды	 								& 1~сек 	& 0 		& 59 		& чт./зап.	\\ \hline
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{|M{1.2cm}|X|M{1.7cm}|}	
+	\caption{Рекомендуемые значения поля \textit{Case} для \textbf{БД}} \label{tab:app_bd_case} \\
+	
+	\hline
+	Адрес	& \calign{Название и~описание параметра}	& Доступ	\\ \hline
+	\endfirsthead
+	
+	\multicolumn{3}{r}{продолжение следует\ldots} \\
+	\endfoot
+	\endlastfoot
+	
+	\multicolumn{3}{l}{Продолжение таблицы \ref{tab:app_bd_case}} 	\\ \hline 
+	Адрес	& \calign{Название и~описание параметра}	& Доступ	\\ \hline
+	\endhead
+	
+	\multicolumn{3}{|c|}{Флаги текущего состояния} 					\\ \hline
+	201 	& Неисправность 							&  чт. 		\\ \hline
+	202 	& Предупреждение 							&  чт.		\\ \hline
+	203		& Индикация команд передатчика				&  чт./зап.	\\ \hline
+	204 	& Индикация команд приемника 				&  чт./зап.	\\ \hline 	
+\end{tabularx}

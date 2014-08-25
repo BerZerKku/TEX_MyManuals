@@ -1,0 +1,37 @@
+\input{preambule}
+
+% Заполнение граф Титульного листа и основной надписи
+\ESKDcompany{ООО <<Прософт-Системы>>}
+%\ESKDclassCode{}
+\ESKDtitle{OrCAD 16.6}
+\ESKDdocName{Заметки}
+\ESKDsignature{Заметки OrCAD 16.6 }
+\ESKDgroup{\normalsize ООО <<Прософт-Системы>>}
+
+% основная надпись
+\ESKDauthor{\ESKDfontII Щеблыкин М.В.}
+%\ESKDchecker{\ESKDfontII Макаров Е.Г.}
+%\ESKDnormContr{\ESKDfontII Бунина О.Ю.}
+%\ESKDapprovedBy{\ESKDfontII Чирков А.Г.}
+\ESKDdate{2014/08/14}
+%\ESKDcolumnI{АВАНТ К400 \\ \vspace{0.5cm} \ESKDfontIII{Инструкция по использованию протокола MODBUS}}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+	
+\include{OrCAD/DesigEntryCIS}
+
+\include{OrCAD/PCBeditor}
+
+\include{OrCAD/PadDesigner}
+
+\ESKDappendix{Справочное}{Рекомендуемые значения для полей БД} \label{app:bd}
+\input{OrCAD/appBD}
+
+\ESKDappendix{Справочное}{Примеры горячих кнопок для \textbf{PCB Editor}} \label{app:hot_keys}
+\input{OrCAD/appHotKeys}
+
+\end{document}
+
