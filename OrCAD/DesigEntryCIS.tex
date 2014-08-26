@@ -1,9 +1,13 @@
-\section{Design Entry CIS} \label{sec:design_entry_cis}
+\section{Design Entry CIS} \label{sec:cis}
 
 
 
 %%------- Файл настроек Capture.ini
-\subsection{Файл настроек Capture.ini} \label{ssec:capture_ini}
+\subsection{Настройка} \label{ssec:cis_setup}
+
+
+%%%------- Файл настроек Capture.ini
+\subsubsection{Файл настроек Capture.ini} \label{sssec:cis_setup_capture_ini}
 
 В~версии~\textbf{16.6} при~загрузке \textbf{Design Entry CIS} в~консоли выводится путь к~этому файлу. В~\textbf{16.5} "--- лежит в~\textit{<<../SPB\_16.5/tools/capture/>>}. 
 
@@ -32,11 +36,31 @@
 
 
 
+%%%------- Preferences
+\subsubsection{Preferences}
+
+На вкладке \textit{<<Colors/Print>>} можно задать цветовую палитру проекта и элементы выводимые на печать (\textit{checkbox}).
+
+На вкладке \textit{<<Grid Display>>} можно настроить типа видимости сетки в редакторе схем (\textit{<<Schematic Page Grid>>}) и редакторе символов (\textit{<<Symbol Grid>>}). \textit{<<Grid spacing>>} отвечает за дробление сетки относительно шага ножек  и лучше эту опцию оставлять по умолчанию \textit{1/1}. \textit{<<Pointer snap to grid>>} отвечает за привязку к сетке: \textit{<<Fine>>} "--- без привязи, \textit{<<Master>>} "--- рекомендовано.
+
+На вкладке \textit{<<Pad and Zoom>>} параметр \textit{<<Auto Scroll Percent>>} рекомендуется установить 2.
+
+На вкладке \textit{<<Miscellaneous>>} параметр \textit{<<Intertool Communication>>} отвечает за интерактивную связь редактора схем и плат. А параметр \textit{<<Wire Drag>>} отвечает за возможность перемещения элемента вместе с линиями связи.
+
+
+
+%%%------- Preferences
+\subsubsection{Design Template}
+
+На вкладке \textit{<<Page Size>>} параметр \textit{<<Pin-to-Pin Spacing>>} отвечает за шаг ножек символа.
+
+
+
 %%------- База данных
 \newpage
 \subsection{База данных} \label{ssec:bd}
 
-Для корректной работы \textbf{БД} необходимо настроить \hyperref[ssec:capture_ini]{\textbf{Capture.ini}}.
+Для корректной работы \textbf{БД} необходимо настроить \hyperref[sssec:cis_setup_capture_ini]{\textbf{Capture.ini}}.
 
 Значения для \textbf{multi-values} полей записывают через запятую.
 
