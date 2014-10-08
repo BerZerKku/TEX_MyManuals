@@ -245,7 +245,6 @@
 При помощи данной опции можно создавать \textbf{УГО} по полученным из файла, созданным например для \textbf{ПЛИС} из проекта \textbf{Quartus}, данным.
 
 В окне проекта перейти во вкладку \textit{<<Menu -> Tools -> Generate Part>>}. При первом создании установить флаг \textit{<<Create new part>>}, для обновления \textit{<<Update pins on existing part in library>>}.
-
 	\begin{figure}[H]
 		\center{\includegraphics[width=0.6\linewidth]{create_symbol_3.jpg}}
 	\end{figure}
@@ -257,8 +256,72 @@
 %%%------- По SPICE описанию
 \subsubsection{По SPICE описанию} \label{sssec:create_symbol_spice}
 
+% TODO
 
+%%%------- Объединение ножек
+\subsubsection{Дополнительные свойства символа} \label{sssec:create_symbol_spice}
 
+Номера выводов \textbf{УГО} и их~количество на~схеме должны в~точности соответствовать его~посадочному месту. Иначе при~создании списка соединений будет сформирована ошибка. Но~иногда возникает желание скрыть несколько выводов подключенных к~одной цепи, либо избавиться от~не~используемых. Это можно сделать за~cчет использования дополнительных свойств символа \textit{NC} и \textit{PACK\_SHORT}.
+
+Ниже приведено использование данных свойств на~основе элемента LM317.
+
+Данная микросхема имеет 4~вывода~ $V_{OUT}$ 2, 3, 6, 7. Которые объединены друг с~другом. И два не~используемых вывода~\textit{NC} 4 и 5.
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.6\linewidth]{lm317_pin.jpg}}
+	\end{figure}
+	
+Необходимо получить символ на подобии этого]:	
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.5\linewidth]{lm317_symbol.jpg}}
+	\end{figure}
+	
+Для начала, рисуется УГО со всеми используемыми выводами элемента. Все имена должны быть уникальными. Выводам с~одноименными названиями можно дать названия типа \textit{VOUT1} или \textit{VOUT\#3}, где после символа~\textit{\#} стоит номер вывода.
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.4\linewidth]{lm317_symbol_1.jpg}}
+	\end{figure}
+
+Далее необходимо перейти в~окно редактирования свойств <<Options -> Part Properties...>>.
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.6\linewidth]{lm317_part_properties.jpg}}
+	\end{figure}
+
+Добавить свойство \textit{PACK\_SHORT} и указать какие выводы должны быть объединены. 
+	\begin{figure}[H]
+		\center{\includegraphics[width=\linewidth]{lm317_pack_short.jpg}}
+	\end{figure}
+Значение вводится в~ввиде:
+	\begin{equation}
+		PACK\_SHORT = (<group1>)(<group2>)[<group3>]
+	\end{equation}
+	\begin{ESKDexplanation}
+		\item[,где] $<group>$ записывается в~ввиде $(logicPin1, logicPin2)$.
+	\end{ESKDexplanation}
+	
+Далее необходимо сделать невидимыми нужные выводы.
+
+Сначала выбрать \textit{<<View -> Package>>}:
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.25\linewidth]{lm317_view_package.jpg}}
+	\end{figure}
+, а затем \textit{<<Edit -> Properties...>>}. 
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.6\linewidth]{lm317_edit_properties.jpg}}
+	\end{figure}
+И установить свойство выводов \textit{Ignore}.
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.6\linewidth]{lm317_package_properties.jpg}}
+	\end{figure}
+В~итоге будет получен желаемый результат.
+
+Для того чтобы установить свойство \textit{NC}, необходимо перейти в~окно редактирования свойств <<Options -> Part Properties...>>.
+	 \begin{figure}[H]
+	 	\center{\includegraphics[width=0.6\linewidth]{lm317_part_properties.jpg}}
+	 \end{figure}
+И добавить свойство~NC с~перечислением всех необходимых не~подключенных номеров выводов.
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.8\linewidth]{lm317_nc.jpg}}
+	\end{figure}
+	
 %%-------
 \newpage
 \subsection{Вариантные исполнения} \label{ssec:variant_list}
